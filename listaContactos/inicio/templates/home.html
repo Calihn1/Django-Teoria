@@ -2,6 +2,10 @@
 {%block content %}
 <h2>Hola Mundo desde DJango</h2>
 <h3>Con Templates</h3>
+<p>
+    {{myText}},
+    {{myNumber}}
+</p>
 {{ request.user }}
 <br>
 {{ request.user.is_authenticated }}
