@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Persona
 
 #Create your views here
 class PersonaListView(ListView):
     model = Persona
-    queryset = Persona.objects.filter(edad__lte='20')
+
+class PersonaDetailView(DetailView):
+    model = Persona

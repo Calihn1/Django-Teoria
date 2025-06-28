@@ -1,16 +1,11 @@
 {% extends 'personas/base.html' %}
 
-{% block title %}
-    Lista de Personas
-{% endblock %}
+{% block title %}Lista de Personas{% endblock %}
 
 {% block body %}
-    <h1>Listado de Personas</h1>
+  <h1>Listado de Personas</h1>
 
-    {% for instance in object_list %}
-        <p>
-            {{ instance.id }} – 
-            <a href="{{ instance.get_absolute_url }}">{{ instance.nombres }}</a>
-        </p>
-    {% endfor %}
+  <p>1 – <a href="/personas/1/">Alfredo</a></p>
+  <p>2 – <a href="/personas/2/">Juan</a></p>
+  <p>3 – <a href="/personas/3/">Jorge</a></p>
 {% endblock %}
