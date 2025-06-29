@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from pdf_generator import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('personas/', include('personas.urls', namespace='personas')),
     path('examples/', include('example.urls', namespace='examples')),
+    path('generatePdf/', views.pdf_view, name='generate_pdf'),
 ]
