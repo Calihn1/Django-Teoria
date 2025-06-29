@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'personas',
     'example',
+    'pdf_generator',
 ]
 
 MIDDLEWARE = [
