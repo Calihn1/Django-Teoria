@@ -16,21 +16,21 @@ class LanguageDetailView(DetailView):
 class LanguageDeleteView(DeleteView):
     model = Language
     template_name = 'frameworks/language_confirm_delete.html'
-    success_url = reverse_lazy('frameworks:language-list')
+    success_url = reverse_lazy('examples:language-list')
 
 class FrameworkCreateView(CreateView):
     model = Framework
     form_class = FrameworkForm
     template_name = 'frameworks/framework_form.html'
-    success_url = reverse_lazy('frameworks:language-list')
+    success_url = reverse_lazy('examples:language-list')
 
 class FrameworkUpdateView(UpdateView):
     model = Framework
     fields = ['name', 'language']
     template_name = 'frameworks/framework_form.html'
-    success_url = reverse_lazy('frameworks:language-list')
+    success_url = reverse_lazy('examples:language-list')
 
 class FrameworkDeleteView(DeleteView):
     model = Framework
     template_name = 'frameworks/framework_confirm_delete.html'
-    success_url = reverse_lazy('frameworks:language-list')
+    success_url = reverse_lazy('examples:language-list')
