@@ -1,8 +1,14 @@
+from django.http import HttpResponse
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Persona
 
 #Create your views here
+class PersonaQueryView(View):
+    def get(self, request, *args, **kwargs):
+        return HttpResponse('Hola Mundo con Clases')
+
 class PersonaListView(ListView):
     model = Persona
 
