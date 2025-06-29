@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Persona
 
 #Create your views here
@@ -19,4 +19,8 @@ class PersonaUpdateView(UpdateView):
     model = Persona
     fields = ['nombres', 'apellidos', 'edad', 'donador']
     template_name = 'personas/persona_form.html'     
+    success_url = reverse_lazy('personas:persona-list')
+
+class PersonaDeleteView(DeleteView):
+    model = Persona
     success_url = reverse_lazy('personas:persona-list')
