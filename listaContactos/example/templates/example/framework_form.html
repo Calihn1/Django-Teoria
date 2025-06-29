@@ -1,0 +1,12 @@
+{% extends 'example/base.html' %}
+
+{% block title %}Nuevo o Editar Framework{% endblock %}
+
+{% block body %}
+  <h1>{% if object %}Editar{% else %}Nuevo{% endif %} Framework</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+{% endblock %}

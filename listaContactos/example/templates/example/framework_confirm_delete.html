@@ -1,0 +1,12 @@
+{% extends 'example/base.html' %}
+
+{% block title %}Borrar Framework{% endblock %}
+
+{% block body %}
+  <h1>Confirmar borrado</h1>
+  <p>¿Estás seguro de que quieres borrar "{{ object.name }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, borrar</button>
+  </form>
+{% endblock %}

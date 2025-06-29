@@ -1,0 +1,16 @@
+{% extends 'example/base.html' %}
+
+{% block title %}Frameworks del Lenguaje{% endblock %}
+
+{% block body %}
+  <h1>Frameworks en {{ object.name }}</h1>
+  <ul>
+    {% for framework in object.framework_set.all %}
+      <li>
+        {{ framework.name }}
+        – <a href="{% url 'examples:framework-update' framework.id %}">Editar</a>
+        – <a href="{% url 'examples:framework-delete' framework.id %}">Eliminar</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

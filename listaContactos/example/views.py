@@ -7,30 +7,30 @@ from django.shortcuts import redirect
 
 class LanguageListView(ListView):
     model = Language
-    template_name = 'frameworks/language_list.html'
+    template_name = 'example/language_list.html'
 
 class LanguageDetailView(DetailView):
     model = Language
-    template_name = 'frameworks/language_detail.html'
+    template_name = 'example/language_detail.html'
 
 class LanguageDeleteView(DeleteView):
     model = Language
-    template_name = 'frameworks/language_confirm_delete.html'
+    template_name = 'example/language_confirm_delete.html'
     success_url = reverse_lazy('examples:language-list')
 
 class FrameworkCreateView(CreateView):
     model = Framework
     form_class = FrameworkForm
-    template_name = 'frameworks/framework_form.html'
+    template_name = 'example/framework_form.html'
     success_url = reverse_lazy('examples:language-list')
 
 class FrameworkUpdateView(UpdateView):
     model = Framework
     fields = ['name', 'language']
-    template_name = 'frameworks/framework_form.html'
+    template_name = 'example/framework_form.html'
     success_url = reverse_lazy('examples:language-list')
 
 class FrameworkDeleteView(DeleteView):
     model = Framework
-    template_name = 'frameworks/framework_confirm_delete.html'
+    template_name = 'example/framework_confirm_delete.html'
     success_url = reverse_lazy('examples:language-list')

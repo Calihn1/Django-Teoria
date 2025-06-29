@@ -1,0 +1,13 @@
+{% extends 'example/base.html' %}
+
+{% block title %}Lenguajes{% endblock %}
+
+{% block body %}
+  <h1>Lista de Lenguajes</h1>
+  <ul>
+    {% for language in object_list %}
+      <li><a href="{% url 'examples:language-detail' language.id %}">{{ language.name }}</a></li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'examples:framework-create' %}">Agregar nuevo Framework</a>
+{% endblock %}
