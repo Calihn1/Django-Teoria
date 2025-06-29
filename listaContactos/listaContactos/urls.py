@@ -23,4 +23,5 @@ urlpatterns = [
     path('personas/', include('personas.urls', namespace='personas')),
     path('examples/', include('example.urls', namespace='examples')),
     path('generatePdf/', views.pdf_view, name='generate_pdf'),
+    path('', include('send.urls')),
 ]
